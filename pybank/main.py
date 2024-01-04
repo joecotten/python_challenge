@@ -2,14 +2,14 @@ import os
 import csv
 from pathlib import Path
 
-file = Path("python_challenge", "pybank", "resources", "budget_data.csv")
+file = os.path.join("pybank","resources","budget_data.csv")
 
 total_months = []
 total_profit = []
 monthly_change = []
 
-with open(file) as budget:
-    csvreader = csv.reader(budget, delimiter=",")
+with open(file) as filepath:
+    csvreader = csv.reader(filepath, delimiter=",")
 
     header = next(csvreader)
 
@@ -28,11 +28,11 @@ with open(file) as budget:
     print ("----------------------------")
     print (f"Total Months{len(total_months)}")
     print (f"Total: ${sum(total_profit)}")
-    print (f"Average Change: ${round(sum(monthly_change)/ len(monthly_change),2)}")
-    print (f"Greatest Increase in Profits: {total_months[max_increase]}(${(str(max_increase))})")
-    print (f"Greatest Decrease in Profits: {total_months[max_decrease]}(${(str(max_decrease))})")
+    #print (f"Average Change: ${round(sum(monthly_change)/ len(monthly_change),2)}")
+    #print (f"Greatest Increase in Profits: {total_months[max_increase]}(${(str(max_increase))})")
+    #print (f"Greatest Decrease in Profits: {total_months[max_decrease]}(${(str(max_decrease))})")
 
-    output = Path("python-challenge", "pybank", "analysis",+ "Financial_Analysis_Summary.txt")
+    output = os.path.join("pybank","analysis", "output.csv")
 
     with open(output, "w") as file:
 
