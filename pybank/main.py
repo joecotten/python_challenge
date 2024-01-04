@@ -32,7 +32,7 @@ with open(file) as budget:
     print (f"Greatest Increase in Profits: {total_months[max_increase]}(${(str(max_increase))})")
     print (f"Greatest Decrease in Profits: {total_months[max_decrease]}(${(str(max_decrease))})")
 
-    output = Path("python-challenge", "pybank", "analysis", "Financial_Analysis_Summary.txt")
+    output = Path("python-challenge", "pybank", "analysis",+ "Financial_Analysis_Summary.txt")
 
     with open(output, "w") as file:
 
